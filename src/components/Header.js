@@ -19,7 +19,8 @@ export const Header = (props) => {
 			{...props}
 			bg={bg}>
 			<Flex w="33%">
-				<Logotype h='84px'/>
+				<Logotype h='84px'
+					transform='scale(1.2)' />
 			</Flex>
 			<Spacer />
 			<Flex w="33%"
