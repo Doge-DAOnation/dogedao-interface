@@ -21,7 +21,7 @@ const App = () => {
 					<Box h='calc(100vh-2.4rem)'
 						  justifyContent='center'
 						  mx={{ base: '0.5rem', sm: '1rem', md: '2.5rem', lg: '13rem' }}
-						  p={3}>
+						  p='4.25rem 0'>
 						<Switch>
 							<Route path='/' exact render={() =>
 								<Index />

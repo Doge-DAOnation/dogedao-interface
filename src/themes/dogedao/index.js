@@ -36,7 +36,8 @@ const overrides = {
 				width: '30vw',
 			},
 			h1: {
-				textTransform: 'uppercase',
+				textTransform: 'capitalize',
+				fontWeight: 'bold',
 				margin: '0 0 1rem',
 			},
 			h2: {
@@ -47,6 +48,11 @@ const overrides = {
 			},
 			h4: {
 				margin: '0 0 0.5rem',
+			},
+			hr: {
+				borderColor: '#98def9',
+				borderWidth: '10px',
+				borderRadius: '5px',
 			},
 			'img[src=\'\']': {
 				opacity: '0',

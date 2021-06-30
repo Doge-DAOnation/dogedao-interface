@@ -8,4 +8,8 @@ export default {
 		light: '#ebfaff',
 		dark: '#FCE9C8',
 	},
+	blue: {
+		100: '#98DEF9',
+		300: '#31619b',
+	},
 }
