@@ -2,6 +2,9 @@ export default {
 	noLigs: {
 		fontVariantLigatures: 'none',
 	},
+	noTypeface: {
+		fontFamily: 'initial',
+	},
 	p: {
 		marginBottom: '2.3rem',
 	},

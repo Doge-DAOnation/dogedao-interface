@@ -3,7 +3,7 @@ import { Flex, Spacer, useColorModeValue, useBreakpointValue } from '@chakra-ui/
 
 import { Logotype } from './Logotype'
 import { WalletConnectionToggle } from './WalletConnectionToggle'
-import { ColorModeSwitcher } from './ColorModeSwitcher'
+// import { ColorModeSwitcher } from './ColorModeSwitcher'
 
 export const Header = (props) => {
 
@@ -31,7 +31,7 @@ export const Header = (props) => {
 				<WalletConnectionToggle
 					marginLeft='0.6rem'
 					size={size} />
-				<ColorModeSwitcher marginLeft='0.6rem' />
+				{/* <ColorModeSwitcher marginLeft='0.6rem' /> */}
 			</Flex>
 		</Flex>
 	)

@@ -9,24 +9,6 @@ const connected = {
 	position: defaults.toast.position,
 }
 
-const destroyed = {
-	title: 'Share acquired',
-	description: 'Ether was burnt. Claim your Veth share later.',
-	status: 'success',
-	duration: defaults.toast.duration,
-	isClosable: defaults.toast.closable,
-	position: defaults.toast.position,
-}
-
-const claimed = {
-	title: 'Veth claimed',
-	description: 'Your share of Veth has been withdrawn.',
-	status: 'success',
-	duration: defaults.toast.duration,
-	isClosable: defaults.toast.closable,
-	position: defaults.toast.position,
-}
-
 const insufficientBalance = {
 	title: 'Insufficient balance',
 	description: 'Your account balance is insufficient.',
@@ -63,34 +45,25 @@ const walletNotConnected = {
 	position: defaults.toast.position,
 }
 
-const eraNotSelected = {
-	title: 'Era not selected',
-	description: 'Please select an emission era.',
+const amountOfEthNotEntered = {
+	title: 'Amount of ETH not entered',
+	description: 'Please enter the amount of ETH.',
 	status: 'error',
 	duration: defaults.toast.duration,
 	isClosable: defaults.toast.closable,
 	position: defaults.toast.position,
 }
 
-const dayNotSelected = {
-	title: 'Day not selected',
-	description: 'Please select an emission day.',
-	status: 'error',
-	duration: defaults.toast.duration,
-	isClosable: defaults.toast.closable,
-	position: defaults.toast.position,
-}
-
-const amountOfEthToBurnNotEntered = {
-	title: 'Amount of ETH to burn not entered',
-	description: 'Please enter the amount of ETH to burn.',
-	status: 'error',
+const successfulDeposit = {
+	title: 'Deposit has been made',
+	description: 'You have successfully provided liquidity.',
+	status: 'success',
 	duration: defaults.toast.duration,
 	isClosable: defaults.toast.closable,
 	position: defaults.toast.position,
 }
 
 export {
-	connected, failed, rejected, insufficientBalance, destroyed, claimed,
-	walletNotConnected, eraNotSelected, dayNotSelected, amountOfEthToBurnNotEntered,
+	connected, failed, rejected, insufficientBalance,
+	walletNotConnected, amountOfEthNotEntered, successfulDeposit,
 }

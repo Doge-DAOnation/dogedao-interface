@@ -32,8 +32,20 @@ const overrides = {
 			'.chakra-alert button:focus': {
 				boxShadow: 'none',
 			},
-			'.chakra-toast__inner': {
-				width: '30vw',
+			'.chakra-toast__inner .chakra-alert': {
+				alignItems: 'center',
+				borderRadius: '21px',
+				paddingRight: '1rem',
+				border: '1px solid #0000002b',
+			},
+			'.chakra-toast__inner .chakra-alert button': {
+				position: 'initial',
+				fontSize: '12px',
+				marginLeft: '20px',
+			},
+			'.chakra-toast__inner .chakra-alert .chakra-alert__icon': {
+				width: '36px',
+				height: '36px',
 			},
 			h1: {
 				textTransform: 'capitalize',
@@ -75,9 +87,6 @@ const overrides = {
 		MenuItem: menuitem,
 		Link: link,
 		Spinner: spinner,
-		Toast: {
-			minWidth: '440px',
-		},
 	},
 }
 

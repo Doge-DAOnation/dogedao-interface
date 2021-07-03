@@ -44,7 +44,7 @@ export const WalletConnectionToggle = (props) => {
 		<Button
 			size='md'
 			minWidth='initial'
-			fontSize={{ base: '0.65rem', sm: 'sm' }}
+			fontSize={{ base: '0.85rem', sm: 'sm' }}
 			variant='outline'
 			aria-label='Wallet Connection Status'
 			isLoading={working}
