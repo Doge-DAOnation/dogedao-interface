@@ -20,7 +20,7 @@ const App = () => {
 						      p='1.2rem 4vw'
 							    justifyContent='center'/>
 					<Flex
-						height='calc(100vh - 288.4px)'
+						height='calc(100vh - 357.517px)'
 						justifyContent='flex-start'
 						maxW='768px'
 						m='0 auto'
