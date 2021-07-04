@@ -71,6 +71,7 @@ export const PoolList = (props) => {
 	const itemStats = {
 		width: '100%',
 		display: 'flex',
+		flexFlow: { base: 'column', md: 'row' },
 	}
 
 	const statVale = {
