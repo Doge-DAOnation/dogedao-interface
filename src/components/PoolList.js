@@ -58,7 +58,7 @@ export const PoolList = (props) => {
 		p: '1.6rem 1.5rem',
 		_hover: {
 			bg: 'transparent',
-			cursor: 'pointer',
+			cursor: '',
 		},
 	}
 
