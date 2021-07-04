@@ -11,8 +11,6 @@ export const Footer = (props) => {
 	const style = {
 		alignItems: 'center',
 		flexDirection: 'column',
-		position: 'relative',
-		zIndex: '-1',
 	}
 
 	const iconStyle = {

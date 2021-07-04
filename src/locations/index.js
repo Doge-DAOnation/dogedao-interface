@@ -11,7 +11,7 @@ const Index = () => {
 				<Box as='span' pl='9px'>Overview</Box>
 				<LineStraight/>
 			</Heading>
-			<PoolList/>
+			<PoolList pos='realtive' zIndex='2'/>
 		</>
 	)
 }

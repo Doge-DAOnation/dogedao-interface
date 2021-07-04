@@ -35,7 +35,7 @@ const App = () => {
 							} />
 						</Switch>
 					</Flex>
-					<Footer m='50px 0'/>
+					<Footer m='50px 0' pos='realtive' zIndex='1'/>
       	</UseWalletProvider>
 			</ChakraProvider>
 		</Router>
