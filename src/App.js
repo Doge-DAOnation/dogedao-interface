@@ -24,7 +24,7 @@ const App = () => {
 						justifyContent='flex-start'
 						maxW='768px'
 						m='0 auto'
-						p={{ base:'5rem 0.3rem 0.3rem', md: '5rem 2.4rem' }}
+						p={{ base:'5rem 0.6rem 0.3rem', md: '5rem 2.4rem' }}
 						flexDir='column'>
 						<Switch>
 							<Route path='/' exact render={() =>
