@@ -55,7 +55,7 @@ export const PoolList = (props) => {
 	const itemTriggerStyle = {
 		flexDirection: 'row',
 		flexWrap: 'wrap',
-		p: '1.6rem 1.5rem',
+		p: '2.6rem 1.9rem',
 		_hover: {
 			bg: 'transparent',
 			cursor: '',
@@ -79,7 +79,7 @@ export const PoolList = (props) => {
 	}
 
 	const itemContentStyle = {
-		p: '0 1.5rem 1.6rem',
+		p: '0 1.9rem 2.6rem',
 	}
 
 	const properties = {
@@ -100,10 +100,10 @@ export const PoolList = (props) => {
 	useEffect(() => {
 		if(wallet.account) {
 			const provider = new ethers.providers.Web3Provider(wallet.ethereum)
-			lgeIsAddressProvider('0x4dbeBbe598c6987279bF618CceC974AbdFE19F86', provider)
+			lgeIsAddressProvider(wallet.account, provider)
 				.then(is => {
 					if(is) {
-						lgeGetProviderShareAmount('0x4dbeBbe598c6987279bF618CceC974AbdFE19F86', provider)
+						lgeGetProviderShareAmount(wallet.account, provider)
 							.then(amnt => {
 								setLgeProviderShareAmount(amnt)
 							})
