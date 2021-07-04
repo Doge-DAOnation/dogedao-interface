@@ -266,7 +266,7 @@ export const PoolList = (props) => {
 											}
 											else if(err.code === 4001) {
 												setWorking(false)
-												console.log('Transaction rejected: Your have decided to reject the transaction..')
+												console.log('Transaction rejected: You have decided to reject the transaction.')
 												toast(rejected)
 											}
 											else {
