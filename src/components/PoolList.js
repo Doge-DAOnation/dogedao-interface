@@ -24,11 +24,11 @@ export const PoolList = (props) => {
 
 	const [onPressTimeout, setOnPressTimeout] = useState(null)
 	const inc = () => {
-		setValue(prevState => prevState >= 0 ? Number((prevState + 0.1).toFixed(4)) : prevState)
+		setValue(prevState => prevState >= 0 ? Number((Number(prevState) + 0.1).toFixed(4)) : prevState)
 		setOnPressTimeout(setTimeout(inc, 150))
 	}
 	const dec = () => {
-		setValue(prevState => (prevState >= 0.1 ? Number((prevState - 0.1).toFixed(4)) : 0))
+		setValue(prevState => (prevState >= 0.1 ? Number((Number(prevState) - 0.1).toFixed(4)) : 0))
 		setOnPressTimeout(setTimeout(dec, 150))
 	}
 	const stop = () => {
