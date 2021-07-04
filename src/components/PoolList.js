@@ -127,7 +127,7 @@ export const PoolList = (props) => {
 					<Heading as='div' fontSize='1.8rem' display='flex' flex='1'>DD Liquidity Generation Event</Heading>
 					<AccordionIcon />
 					<Box {...itemDesc}>
-						<Box as='i' opacity='0.8'>Donate to the DogeFundMe Pool and help fund good causes.</Box>
+						<Box as='i' opacity='0.8'>Participate in the LGE by adding ETH to the contract.</Box>
 					</Box>
 					<Flex {...itemStats}>
 						{lgeBalance < 0 &&
