@@ -12,7 +12,7 @@ defaults.network.provider = new ethers.providers.WebSocketProvider(
 )
 
 defaults.network.contract = {}
-defaults.network.contract.LGE = '0x93a4c95b43819e3c10a3b031f158C495010e81F8'
+defaults.network.contract.LGE = '0xc45ea36636A3778D35D6B3226256b942c4A10739'
 
 defaults.toast = {}
 defaults.toast.duration = 5000

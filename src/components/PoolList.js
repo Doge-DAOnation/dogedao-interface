@@ -4,7 +4,7 @@ import { Flex, Box, Heading, Accordion, AccordionItem, AccordionButton,
 	Text, Fade, useToast } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { EthIcon } from '../assets/icons/EthIcon'
-import { estimateGasCost, lgeAddLiquidity, lgeIsAddressProvider } from '../common/ethereum'
+import { estimateGasCost, lgeAddLiquidity, lgeGetProviderShareAmount, lgeIsAddressProvider } from '../common/ethereum'
 import { ethers } from 'ethers'
 import { useWallet } from 'use-wallet'
 import defaults from '../common/defaults'
@@ -19,8 +19,8 @@ export const PoolList = (props) => {
 	const toast = useToast()
 	const [value, setValue] = useState(0)
 	const [lgeBalance, setLgeBalance] = useState(-1)
+	const [lgeProviderShareAmount, setLgeProviderShareAmount] = useState(false)
 	const [working, setWorking] = useState(false)
-	const [lgeProvider, setLgeProvider] = useState(false)
 
 	const [onPressTimeout, setOnPressTimeout] = useState(null)
 	const inc = () => {
@@ -100,14 +100,24 @@ export const PoolList = (props) => {
 	useEffect(() => {
 		if(wallet.account) {
 			const provider = new ethers.providers.Web3Provider(wallet.ethereum)
-			lgeIsAddressProvider(wallet.account, provider)
-				.then(is => setLgeProvider(is))
+			lgeIsAddressProvider('0x4dbeBbe598c6987279bF618CceC974AbdFE19F86', provider)
+				.then(is => {
+					if(is) {
+						lgeGetProviderShareAmount('0x4dbeBbe598c6987279bF618CceC974AbdFE19F86', provider)
+							.then(amnt => {
+								setLgeProviderShareAmount(amnt)
+							})
+							.catch(err => {
+								console.log(err)
+								setLgeProviderShareAmount(-1)
+							})
+					}
+				})
 				.catch(err => {
-					setLgeProvider(false)
 					console.log(err)
 				})
 		}
-	}, [wallet.account])
+	}, [wallet.account, lgeBalance])
 
 	return (
 		<Accordion {...properties} {...style} {...props}>
@@ -119,38 +129,54 @@ export const PoolList = (props) => {
 						<Box as='i' opacity='0.8'>Donate to the DogeFundMe Pool and help fund good causes.</Box>
 					</Box>
 					<Flex {...itemStats}>
+						{lgeBalance < 0 &&
+							<Flex flex='1' minH='59.1px'>
+								<Fade in={lgeBalance} style={{ alignSelf: 'center' }}>
+									<Box as='i' opacity='0.8'>Loading...</Box>
+								</Fade>
+							</Flex>
+						}
+						{lgeBalance >= 0 &&
 						<Flex flex='1' flexFlow='column'>
 							<Box as='span' {...statVale}>
-								{lgeBalance >= 0 &&
-									<Fade in={lgeBalance}>
-										<Box>Total Value Locked</Box>
-										<Box as='span'>{prettifyCurrency(lgeBalance ? ethers.utils.formatEther(lgeBalance.toString()) : '', '0', '5', 'ETH', false)}</Box>
+								<Fade in={lgeBalance}>
+									<Box>Total Value Locked</Box>
+									<Box as='span'>{prettifyCurrency(lgeBalance ? ethers.utils.formatEther(lgeBalance.toString()) : '', '0', '5', 'ETH', false)}</Box>
+									<Box as='span' fontFamily='arial'>Ξ</Box>
+								</Fade>
+							</Box>
+						</Flex>
+						}
+						{lgeProviderShareAmount &&
+							<Flex flex='1' flexFlow='column'>
+								<Box as='span' {...statVale}>
+									<Fade in={lgeProviderShareAmount}>
+										<Box>You Provided</Box>
+										<Box as='span' {...statVale}>{
+											prettifyCurrency(ethers.utils.formatEther(lgeProviderShareAmount.toString()), '0', '5', 'ETH', false)
+										}
 										<Box as='span' fontFamily='arial'>Ξ</Box>
+										</Box>
 									</Fade>
-								}
-								{/* {lgeBalance < 0 &&
-									<Fade in={lgeBalance}>
-										<Box as='i' opacity='0.8'>Loading...</Box>
+								</Box>
+							</Flex>
+						}
+						{lgeProviderShareAmount &&
+							<Flex flex='1' flexFlow='column'>
+								<Box as='span' {...statVale}>
+									<Fade in={lgeProviderShareAmount}>
+										<Box>Pool Share</Box>
+										<Box as='span' {...statVale}>
+											{`${
+												lgeProviderShareAmount.div(lgeBalance)
+													.mul(ethers.BigNumber.from('100'))
+													.toNumber()
+											}%`}
+										</Box>
 									</Fade>
-								} */}
-								{!lgeBalance &&
-									<Fade in={lgeBalance}>
-										<Box as='i' opacity='0.8'>Not available</Box>
-									</Fade>
-								}
-							</Box>
-						</Flex>
-						{}
-						<Flex flex='1' flexFlow='column'>
-							<Box as='span' {...statVale}>
-								{lgeProvider &&
-										<Fade in={lgeBalance}>
-											<Box>Your share</Box>
-											<Box as='span' {...statVale}>n/a</Box>
-										</Fade>
-								}
-							</Box>
-						</Flex>
+								</Box>
+							</Flex>
+						}
 					</Flex>
 				</AccordionButton>
 				<AccordionPanel {...itemContentStyle}>

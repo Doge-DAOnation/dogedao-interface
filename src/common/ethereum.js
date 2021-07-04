@@ -23,12 +23,21 @@ const lgeGetLiquidityProviders = async (provider) => {
 }
 
 const lgeIsAddressProvider = async (address, provider) => {
-	const ab = await lgeGetLiquidityProviders(provider)
+	const is = await lgeGetLiquidityProviders(provider)
 		.then(a => {
 			return a.includes(address) ? true : false
 		})
 		.catch(err => console.log(err))
-	return ab
+	return is
+}
+
+const lgeGetProviderShareAmount = async (providerAddress, provider) => {
+	const contract = new ethers.Contract(
+		defaults.network.contract.LGE,
+		LGEAbi,
+		provider.getSigner(0),
+	)
+	return await contract.liquidityProviders(providerAddress)
 }
 
 const estimateGasCost = async (contractAddress, abi, callName, data, provider) => {
@@ -45,4 +54,5 @@ const estimateGasCost = async (contractAddress, abi, callName, data, provider) =
 
 export {
 	lgeAddLiquidity, lgeGetLiquidityProviders, estimateGasCost, lgeIsAddressProvider,
+	lgeGetProviderShareAmount,
 }
