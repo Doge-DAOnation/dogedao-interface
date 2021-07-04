@@ -20,11 +20,11 @@ const App = () => {
 						      p='1.2rem 4vw'
 							    justifyContent='center'/>
 					<Flex
-						height='calc(100vh - 357.517px)'
+						height={{ base: 'auto', md: 'calc(100vh - 357.517px)' }}
 						justifyContent='flex-start'
 						maxW='768px'
 						m='0 auto'
-						p='5rem 0'
+						p={{ base:'5rem 0.3rem 0.3rem', md: '5rem 2.4rem' }}
 						flexDir='column'>
 						<Switch>
 							<Route path='/' exact render={() =>

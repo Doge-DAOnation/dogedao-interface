@@ -182,7 +182,7 @@ export const PoolList = (props) => {
 				<AccordionPanel {...itemContentStyle}>
 					<Heading as='div' size='md' display='flex' flex='1' mb='0.3rem'>Deposit Liquidity</Heading>
 					<Heading as='div' size='xs' display='flex' flex='1' opacity='0.8'>Amount</Heading>
-					<Flex>
+					<Flex flexWrap={{ base: 'wrap', md: 'nowrap' }}>
 						<HStack width='100%'
 							maxWidth='313px'
 							marginBottom='1rem'>
