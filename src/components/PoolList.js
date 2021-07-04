@@ -55,7 +55,7 @@ export const PoolList = (props) => {
 	const itemTriggerStyle = {
 		flexDirection: 'row',
 		flexWrap: 'wrap',
-		p: '2.6rem 1.9rem',
+		p: '2.6rem 1.9rem 1rem',
 		_hover: {
 			bg: 'transparent',
 			cursor: '',
