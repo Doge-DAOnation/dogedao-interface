@@ -185,7 +185,7 @@ export const PoolList = (props) => {
 					<Heading as='div' size='xs' display='flex' flex='1' opacity='0.8'>Amount</Heading>
 					<Flex flexWrap={{ base: 'wrap', md: 'nowrap' }}>
 						<HStack width='100%'
-							maxWidth='313px'
+							maxWidth={{ base: '100%', md: '313px' }}
 							marginBottom='1rem'>
 							<Text as='span'>ETH</Text>
 							<EthIcon minWidth='32px' height='32px' />
