@@ -201,15 +201,11 @@ export const PoolList = (props) => {
 							paddingRight='0.5rem'
 							marginBottom='1rem'>
 							<Button onMouseDown={dec}
-								onTouchStart={dec}
 								onMouseUp={stop}
-								onTouchEnd={stop}
 								onMouseLeave={stop}
 							>-</Button>
 							<Button onMouseDown={inc}
-								onTouchStart={inc}
 								onMouseUp={stop}
-								onTouchEnd={stop}
 								onMouseLeave={stop}
 							>+</Button>
 							<Button
