@@ -1,45 +1,25 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import { ChakraProvider, Flex } from '@chakra-ui/react'
-import dogedao from './themes/dogedao'
-import { UseWalletProvider } from 'use-wallet'
-import defaults from './common/defaults'
-import { Header } from './components/Header'
-import { Footer } from './components/Footer'
+import logo from "./logo.svg";
+import "./App.css";
 
-import Index from './locations/index'
-
-const App = () => {
-	return (
-		<Router>
-			<ChakraProvider theme={dogedao}>
-				<UseWalletProvider
-					chainId={defaults.network.chainId}
-					connectors={defaults.network.connectors}>
-					<Header width='100%'
-						      p='1.2rem 4vw'
-							    justifyContent='center'/>
-					<Flex
-						height={{ base: 'auto', md: 'calc(100vh - 357.517px)' }}
-						justifyContent='flex-start'
-						maxW='768px'
-						m='0 auto'
-						p={{ base:'5rem 0.6rem 0.3rem', md: '5rem 2.4rem' }}
-						flexDir='column'>
-						<Switch>
-							<Route path='/' exact render={() =>
-								<Index />
-							}/>
-							<Route path='*' render={() =>
-								<Redirect to={'/'} />
-							} />
-						</Switch>
-					</Flex>
-					<Footer m='50px 0' pos='realtive' zIndex='1'/>
-      	</UseWalletProvider>
-			</ChakraProvider>
-		</Router>
-	)
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-export default App
+export default App;

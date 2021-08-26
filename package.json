@@ -1,25 +1,22 @@
 {
-  "name": "dogedao-interface",
+  "name": "doge-donation",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.13",
-    "@chakra-ui/react": "^1.0.0",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
-    "@metamask/jazzicon": "^2.0.0",
-    "@testing-library/jest-dom": "^5.9.0",
-    "@testing-library/react": "^10.2.1",
-    "@testing-library/user-event": "^12.0.2",
-    "ethers": "^5.4.0",
-    "framer-motion": "^4.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^4.6.0",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
-    "react-icons": "^3.0.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "use-wallet": "^0.8.1",
-    "web-vitals": "^0.2.2"
+    "react-select": "^4.3.1",
+    "sass-loader": "^12.1.0",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,7 +25,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
