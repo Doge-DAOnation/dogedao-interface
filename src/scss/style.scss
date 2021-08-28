@@ -27,7 +27,7 @@
 }
 
 .app_light_grey_bg {
-  background-color: #EDF2F7;
+  background-color: #edf2f7;
 }
 
 .footer {
@@ -54,19 +54,23 @@
 
 .orange_button {
   background-color: #ffbe72;
+  border-color: #ffbe72;
   color: white;
   border-radius: 10px;
   font-weight: 500;
   &:active {
     background-color: #ffa743;
+    border-color: #ffa743;
     color: white;
   }
   &:hover {
     background-color: #ffa743;
+    border-color: #ffa743;
     color: white;
   }
   &:focus {
     background-color: #ffa743;
+    border-color: #ffa743;
     color: white;
   }
 }

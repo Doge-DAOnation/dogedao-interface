@@ -61,7 +61,7 @@ export const WalletConnectionToggle = (props) => {
 			<span style={{
 				order: '-1',
 			}}>
-				{text}
+				{"sdf"}
 			</span>
 		</Button>
 	)

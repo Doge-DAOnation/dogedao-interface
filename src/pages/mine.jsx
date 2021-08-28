@@ -66,7 +66,7 @@ function Mine() {
           <h3 className="text_app_color">Donation Mining</h3>
           <img src={Lines} alt="" />
         </Col>
-        <Col lg={6} className="pt-5">
+        <Col lg={6} className="pt-3 pt-lg-5">
           <div className="app_color_bg border_radius main_card">
             <h5 className="text-white mb-3">Donation Day 37</h5>
             <div className="d-flex">

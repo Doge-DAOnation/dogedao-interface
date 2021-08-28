@@ -36,11 +36,16 @@ export default class index extends React.Component {
         </Helmet>
         <Container fluid>
           <Row>
-            <Col lg={2} className="sidebar_bg sidebar_class px-0">
-              <SideBar />
+            {/* <Col lg={2} className="sidebar_bg sidebar_class px-0"> */}
+            <Col lg={2} className="sidebar_bg px-0">
+              <SideBar isDesktop={isDesktop} />
             </Col>
-            <Col lg={{ span: 10, offset: 2 }} className="bg-white px-3 h-100" style={{minHeight:'100vh'}}>
-              <Header />
+            <Col
+              lg={{ span: 10, offset: 2 }}
+              className="bg-white px-3 h-100"
+              style={{ minHeight: "100vh" }}
+            >
+              <Header isDesktop={isDesktop} />
               {this.props.children}
             </Col>
           </Row>
